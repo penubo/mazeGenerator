@@ -107,6 +107,8 @@ function initBoard() {
 	current.isVisited = true;
 	current.color = color(r, g, b, 100);
 	stack.push(current);
+	
+	solver = new Solver();
 }
 
 function buttonInit() {
@@ -153,7 +155,6 @@ function buttonInit() {
 
 	solutionButton.mousePressed(function() {
 		if(isComplete) {
-			solver = new Solver();
 			solver.solve();
 		} else {
 			// createP('please make maze first');
